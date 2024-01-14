@@ -4,10 +4,10 @@ module.exports = {
 	// You may delete this section if you wish to connect manually via the UI.
 
 	rpc: {
-		host:"localhost",
+		host:"127.0.0.1",
 		port:8332,
-		username:"username",
-		password:"password"
+		username:"tbcuser",
+		password:"randompasswd"
 	},
 
 	// optional: enter your api access key from ipstack.com below
