@@ -15,6 +15,8 @@ var config = require("./../app/config.js");
 var coreApi = require("./../app/api/coreApi.js");
 
 router.get("/", function(req, res) {
+// 		res.render("index");
+// return
 	if (req.session.host == null || req.session.host.trim() == "") {
 		if (req.cookies['rpc-host']) {
 			res.locals.host = req.cookies['rpc-host'];

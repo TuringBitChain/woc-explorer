@@ -41,7 +41,7 @@ block content
 							div(class="float-left", style="height: 40px; width: 40px;")
 								span
 									i(class="fas fa-tachometer-alt fa-2x mr-2", style="margin-top: 6px;")
-							- var hashrateData = utils.formatLargeNumber(miningInfo.networkhashps, 3);
+							- var hashrateData = utils.formatLargeNumber(miningInfo&&miningInfo.networkhashps||0, 3);
 							
 							span(class="font-weight-bold") Hashrate 
 
@@ -49,7 +49,7 @@ block content
 								span #{hashrateData[0]} 
 								span(title=(hashrateData[1].name + "-hash / x10^" + hashrateData[1].exponent), data-toggle="tooltip") #{hashrateData[1].abbreviation}H/s
 
-						if (getblockchaininfo.size_on_disk)
+						if (getblockchaininfo&&getblockchaininfo.size_on_disk)
 							li
 								div(class="float-left", style="height: 40px; width: 40px;")
 									span
@@ -68,8 +68,8 @@ block content
 
 							span(class="font-weight-bold") Unconfirmed Transactions
 
-							p(class="lead") #{mempoolInfo.size.toLocaleString()} tx 
-								- var mempoolBytesData = utils.formatLargeNumber(mempoolInfo.usage, 2);
+							p(class="lead") #{mempoolInfo&&mempoolInfo.size.toLocaleString()} tx 
+								- var mempoolBytesData = utils.formatLargeNumber(mempoolInfo&&mempoolInfo.usage||0, 2);
 								span(class="text-muted") (#{mempoolBytesData[0]} #{mempoolBytesData[1].abbreviation}B)
 
 						li
@@ -77,12 +77,12 @@ block content
 								span
 									i(class="fas fa-dumbbell fa-2x mr-2", style="margin-top: 6px;")
 
-							- var difficultyData = utils.formatLargeNumber(getblockchaininfo.difficulty, 3);
+							- var difficultyData = utils.formatLargeNumber(getblockchaininfo&&getblockchaininfo.difficulty||0, 3);
 
 							span(class="font-weight-bold") Difficulty
 
 							p(class="lead")
-								span(title=parseFloat(getblockchaininfo.difficulty).toLocaleString(), data-toggle="tooltip")
+								span(title=parseFloat(getblockchaininfo&&getblockchaininfo.difficulty).toLocaleString(), data-toggle="tooltip")
 									span #{difficultyData[0]}
 									span  x 10
 									sup #{difficultyData[1].exponent}
@@ -108,11 +108,11 @@ block content
 								span
 									i(class="fas fa-bolt fa-2x mr-2", style="margin-top: 6px; margin-left: 6px;")
 
-							- var chainworkData = utils.formatLargeNumber(parseInt("0x" + getblockchaininfo.chainwork), 2);
+							- var chainworkData = utils.formatLargeNumber(getblockchaininfo?parseInt("0x" + getblockchaininfo.chainwork):0, 2);
 							span(class="font-weight-bold") Chainwork
 							
 							p(class="lead")
-								span(data-toggle="tooltip", title=getblockchaininfo.chainwork.replace(/^0+/, ''))
+								span(data-toggle="tooltip", title=getblockchaininfo&&getblockchaininfo.chainwork.replace(/^0+/, ''))
 									span #{chainworkData[0]}
 									span  x 10
 									sup #{chainworkData[1].exponent}
@@ -120,13 +120,13 @@ block content
 
 	include includes/tools-card.pug
 	
-	if (latestBlocks)
+	if (!latestBlocks)
 		div(class="card mb-3")
 			div(class="card-header")
 				div(class="row")
 					div(class="col")
 						h2(class="h6 mb-0") Latest Blocks
-							if (getblockchaininfo.initialblockdownload)
+							if (getblockchaininfo&&getblockchaininfo.initialblockdownload)
 								small  (#{(getblockchaininfo.headers - getblockchaininfo.blocks).toLocaleString()} behind)
 
 					div(class="col")

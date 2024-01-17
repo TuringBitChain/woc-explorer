@@ -13,7 +13,7 @@ table(class="table table-striped table-responsive-sm mb-0")
 			if (blocks && blocks.length > 0 && blocks[0].weight)
 				th(class="data-header text-right") Weight (wu)
 	tbody
-		each block, blockIndex in blocks
+		each block, blockIndex in blocks||[]
 			if (block)
 				tr
 					td(class="data-cell monospace")

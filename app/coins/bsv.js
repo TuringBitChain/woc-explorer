@@ -32,8 +32,8 @@ var btcCurrencyUnits = [
 module.exports = {
 	name:"BSV",
 	ticker:"BSV",
-	logoUrl:"/img/logo/bsv.png",
-	siteTitle:"WhatsOnChain.com",
+	logoUrl:"/img/logo/logo.png",
+	siteTitle:"turingbitchain.io",
 	pageTitle: "BSV Explorer",
 	siteDescriptionHtml:"<b>whatsonchain.com - Bitcoin SV Blockchain Explorer</b> is <a href='whatsonchain.com).",
 	nodeTitle:"Bitcoin SV Full Node",

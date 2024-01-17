@@ -10,7 +10,7 @@ html(lang="en")
 			style.
 				hr { background-color: #555555; }
 		else
-			link(rel="stylesheet", href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css", integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4", crossorigin="anonymous")
+			link(rel="stylesheet", href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.0/dist/css/bootstrap.min.css", integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4", crossorigin="anonymous")
 		
 		link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Ubuntu:400,700")
 		link(rel="stylesheet", href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css")
@@ -114,14 +114,14 @@ html(lang="en")
 
 			div(style="margin-bottom: 30px;")
 
-			footer(class="footer bg-dark text-light pt-3 pb-1 px-3", style="margin-top: 50px;")
-				div(class="container")
-					div(class="row")
-						div(class="col-md-5")
-							dl
-								dt Source
-								dd
-									a(href="https://github.com/waqas64/woc-explorer") github.com/waqas64/woc-explorer
+			//- footer(class="footer bg-dark text-light pt-3 pb-1 px-3", style="margin-top: 50px;")
+			//- 	div(class="container")
+			//- 		div(class="row")
+			//- 			div(class="col-md-5")
+			//- 				dl
+			//- 					dt Source
+			//- 					dd
+			//- 						a(href="https://github.com/waqas64/woc-explorer") github.com/waqas64/woc-explorer
 
 								//- dt Running Version
 								//- dd
@@ -145,28 +145,28 @@ html(lang="en")
 										//- 	a(href="https://lightning.chaintools.io", class="mr-2", title="Lightning Explorer")
 										//- 		img(src=("/img/logo/lightning.svg"), style="width: 32px; height: 32px;", alt="lightning")
 
-						div(class="col-md-7 text-md-right")
-							dl
-								dt Support Development of #{coinConfig.siteTitle}
-								dd
-									div(class="text-md-right text-center")
+						//- div(class="col-md-7 text-md-right")
+						//- 	dl
+						//- 		dt Support Development of #{coinConfig.siteTitle}
+						//- 		dd
+						//- 			div(class="text-md-right text-center")
 									
-										each coin, index in config.donationAddresses.coins
-											div(style="display: inline-block; max-width: 150px;", class="text-center mb-3 word-wrap monospace", class=(index > 0 ? "ml-md-3" : false))
-												//img(src=donationAddressQrCodeUrls[coin], alt=config.donationAddresses[coin].address, style="border: solid 1px #ccc;")
-												br
-												if (coinConfig.ticker == coin)
-													span #{coin} address: 
-													a(href=("/address/" + config.donationAddresses[coin].address)) #{"QR"}
-												else
-													span #{coin} address: 
-													a(href=(config.donationAddresses.sites[coin] + "/address/" + config.donationAddresses[coin].address)) #{"QR"}
+						//- 				each coin, index in config.donationAddresses.coins
+						//- 					div(style="display: inline-block; max-width: 150px;", class="text-center mb-3 word-wrap monospace", class=(index > 0 ? "ml-md-3" : false))
+						//- 						//img(src=donationAddressQrCodeUrls[coin], alt=config.donationAddresses[coin].address, style="border: solid 1px #ccc;")
+						//- 						br
+						//- 						if (coinConfig.ticker == coin)
+						//- 							span #{coin} address: 
+						//- 							a(href=("/address/" + config.donationAddresses[coin].address)) #{"QR"}
+						//- 						else
+						//- 							span #{coin} address: 
+						//- 							a(href=(config.donationAddresses.sites[coin] + "/address/" + config.donationAddresses[coin].address)) #{"QR"}
 
 		
 		script(src="https://code.jquery.com/jquery-3.3.1.min.js", integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=", crossorigin="anonymous")
 		script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js", integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ", crossorigin="anonymous")
 		script(src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js", integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb", crossorigin="anonymous")
-		script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js", integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm", crossorigin="anonymous")
+		script(src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.0/dist/js/bootstrap.min.js", integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm", crossorigin="anonymous")
 		script(defer, src="https://use.fontawesome.com/releases/v5.2.0/js/all.js", integrity="sha384-4oV5EgaV02iISL2ban6c/RmotsABqE4yZxZLcYMAdG7FAPsyHYAPpywE9PJo+Khy", crossorigin="anonymous")
 
 		script(src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js")
