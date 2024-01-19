@@ -15,12 +15,18 @@ div(id='viz')
                 g.setNode(i,  { label: '#'+blocks[i].height + '\n' + blocks[i].miner.name, class: "type-S" });
              }
              else if (blocks[i].miner){
-                g.setNode(i,  { label: '#'+blocks[i].height + '\n' + blocks[i].miner.substring(0, 3)+"...", class: "type-S" });
+                if(blocks[i].height >= 706400){
+                    g.setNode(i,  { label: '#'+blocks[i].height + '\n' + "metasoftpool", class: "type-S" });
+                }
+                else{
+                    g.setNode(i,  { label: '#'+blocks[i].height + '\n' + blocks[i].miner.substring(0, 3)+"...", class: "type-S" });
+                }
              }
              else{             
                 g.setNode(i,  { label: '#'+blocks[i].height + '\n' + 'Unknown', class: "type-S" }); 
              }
          }
+     
 
         g.setNode(999,  {label: '', shape:"img" }); //Alpha node
 
