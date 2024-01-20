@@ -4,8 +4,8 @@ module.exports = {
 	// You may delete this section if you wish to connect manually via the UI.
 
 	rpc: {
-		host:"127.0.0.1",
-		port:0,
+		host:"",
+		port:,
 		username:"",
 		password:""
 	},
