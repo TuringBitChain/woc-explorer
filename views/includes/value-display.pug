@@ -1,5 +1,5 @@
 if (currencyValue > 0)
-	span(class="monospace") #{utils.formatCurrencyAmount(currencyValue, currencyFormatType)}
+	span(class="monospace") #{utils.formatCurrencyAmount(currencyValue * 100, currencyFormatType)}
 		if (global.exchangeRate)
 			span  
 			span(data-toggle="tooltip", title=utils.formatExchangedCurrency(currencyValue))

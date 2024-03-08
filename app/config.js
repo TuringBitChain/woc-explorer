@@ -1,7 +1,7 @@
 var credentials = require("./credentials.js");
 var coins = require("./coins.js");
 
-var currentCoin = "BSV";
+var currentCoin = "TBC";
 
 module.exports = {
 	cookiePassword: "0x000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f",
@@ -107,7 +107,7 @@ module.exports = {
 		{name:"Mempool Summary", url:"/mempool-summary", desc:"Detailed summary of the current mempool for this node.", fontawesome:"fas fa-clipboard-list"},
 		{name:"Unconfirmed Transactions", url:"/unconfirmed-tx", desc:"Browse unconfirmed/pending transactions.", fontawesome:"fas fa-unlock-alt"},
 
-		{name:"Notifications", url:"/notifications", desc:"Get notifications on slack, twitter, telegram...", fontawesome:"fas fa-bullhorn"},
+		{name:"Notifications", url:"/notifications", desc:"Get notifications on slack, twitter, telegram and other", fontawesome:"fas fa-bullhorn"},
 
 		// {name:"RPC Browser", url:"/rpc-browser", desc:"Browse the RPC functionality of this node. See docs and execute commands.", fontawesome:"fas fa-book"},
 		// {name:"RPC Terminal", url:"/rpc-terminal", desc:"Directly execute RPCs against this node.", fontawesome:"fas fa-terminal"},

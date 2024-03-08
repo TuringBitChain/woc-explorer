@@ -14,6 +14,7 @@ html(lang="en")
 		
 		link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Ubuntu:400,700")
 		link(rel="stylesheet", href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css")
+		link(rel="stylesheet", href="/css/font.css", type="text/css")
 		link(rel="stylesheet", href="/css/radial-progress.css", type="text/css")
 		link(rel='stylesheet', href='/css/styling.css')
 
@@ -77,15 +78,15 @@ html(lang="en")
 														i(class="fas fa-check")
 												span  #{item.name}
 
-									span(class="dropdown-header") Theme
-									a(class="dropdown-item", href="/changeSetting?name=uiTheme&value=light")
-										if (session.uiTheme == "light" || session.uiTheme == "")
-											i(class="fas fa-check")
-										span  Light
-									a(class="dropdown-item", href="/changeSetting?name=uiTheme&value=dark")
-										if (session.uiTheme == "dark")
-											i(class="fas fa-check")
-										span  Dark
+									//span(class="dropdown-header") Theme
+									//a(class="dropdown-item", href="/changeSetting?name=uiTheme&value=light")
+									//	if (session.uiTheme == "light" || session.uiTheme == "")
+									//		i(class="fas fa-check")
+									//	span  Light
+									//a(class="dropdown-item", href="/changeSetting?name=uiTheme&value=dark")
+									//	if (session.uiTheme == "dark")
+									//		i(class="fas fa-check")
+									//	span  Dark
 
 						form(method="post", action="/search", class="form-inline")
 							div(class="input-group input-group-sm")
