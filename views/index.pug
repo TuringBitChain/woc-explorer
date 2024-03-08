@@ -5,7 +5,7 @@ block headContent
 	
 block content
 	h1(class="h3") #{coinConfig.pageTitle} 
-	span(class="tag" style="font-size: small" ) Auto refreshed every 30 secs
+	span(class="tag" style="font-size: small; background-color:#A52E04" ) Auto refreshed every 30 secs
 	hr
 	include includes/graph.pug
 
@@ -49,15 +49,21 @@ block content
 								span #{hashrateData[0]} 
 								span(title=(hashrateData[1].name + "-hash / x10^" + hashrateData[1].exponent), data-toggle="tooltip") #{hashrateData[1].abbreviation}H/s
 
-						if (getblockchaininfo&&getblockchaininfo.size_on_disk)
-							li
-								div(class="float-left", style="height: 40px; width: 40px;")
-									span
-										i(class="fas fa-database fa-2x mr-2", style="margin-top: 6px; margin-left: 3px;")
-								span(class="font-weight-bold") Blockchain Size
+						li
+							div(class="float-left", style="height: 40px; width: 40px;")
+								span
+									i(class="fas fa-bolt fa-2x mr-2", style="margin-top: 6px; margin-left: 6px;")
 
-								- var sizeData = utils.formatLargeNumber(getblockchaininfo.size_on_disk, 2);
-								p(class="lead") #{sizeData[0]} #{sizeData[1].abbreviation}B
+							- var chainworkData = utils.formatLargeNumber(getblockchaininfo?parseInt("0x" + getblockchaininfo.chainwork):0, 2);
+							span(class="font-weight-bold") Chainwork
+
+							p(class="lead")
+								span(data-toggle="tooltip", title=getblockchaininfo && getblockchaininfo.chainwork.replace(/^0+/, ''))
+									span #{chainworkData[0]}
+									span  x 10
+									sup #{chainworkData[1].exponent}
+									span  hashes
+
 
 				div(class="col-md-4")
 					ul(style="list-style-type: none;", class="pl-0")
@@ -103,20 +109,15 @@ block content
 							else
 								p(class="lead") -
 
-						li
-							div(class="float-left", style="height: 40px; width: 40px;")
-								span
-									i(class="fas fa-bolt fa-2x mr-2", style="margin-top: 6px; margin-left: 6px;")
+						if (getblockchaininfo && getblockchaininfo.size_on_disk)
+							li
+								div(class="float-left", style="height: 40px; width: 40px;")
+									span
+										i(class="fas fa-database fa-2x mr-2", style="margin-top: 6px; margin-left: 3px;")
+								span(class="font-weight-bold") Blockchain Size
 
-							- var chainworkData = utils.formatLargeNumber(getblockchaininfo?parseInt("0x" + getblockchaininfo.chainwork):0, 2);
-							span(class="font-weight-bold") Chainwork
-							
-							p(class="lead")
-								span(data-toggle="tooltip", title=getblockchaininfo&&getblockchaininfo.chainwork.replace(/^0+/, ''))
-									span #{chainworkData[0]}
-									span  x 10
-									sup #{chainworkData[1].exponent}
-									span  hashes
+								- var sizeData = utils.formatLargeNumber(getblockchaininfo.size_on_disk, 2);
+								p(class="lead") #{sizeData[0]} #{sizeData[1].abbreviation}B
 
 	include includes/tools-card.pug
 	
