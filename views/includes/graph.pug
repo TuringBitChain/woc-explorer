@@ -15,12 +15,7 @@ div(id='viz')
                 g.setNode(i,  { label: '#'+blocks[i].height + '\n' + blocks[i].miner.name, class: "type-S" });
              }
              else if (blocks[i].miner){
-                if(blocks[i].height >= 824189){
-                    g.setNode(i,  { label: '#'+blocks[i].height + '\n' + "metasoftpool", class: "type-S" });
-                }
-                else{
-                    g.setNode(i,  { label: '#'+blocks[i].height + '\n' + "Unnamed"+"...", class: "type-S" });
-                }
+                g.setNode(i,  { label: '#'+blocks[i].height, class: "type-S" });
              }
              else{             
                 g.setNode(i,  { label: '#'+blocks[i].height + '\n' + 'Unknown', class: "type-S" }); 

@@ -175,10 +175,7 @@ div(class="tab-content")
 									if(result.getblock.miner.name)
 										span #{result.getblock.miner.name} 
 									else
-										if (result.getblock.height >= 824189)
-											span #{"metasoftpool"}
-										else
-											span #{"Unnamed"} 
+										span #{"Unknown"} 
 									if (result.getblock.miner.identifiedBy)
 										span(data-toggle="tooltip", title=("Identified by: " + result.getblock.miner.identifiedBy))
 											i(class="fas fa-info-circle")
