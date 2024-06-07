@@ -7,7 +7,7 @@ var btcCurrencyUnits = [
 		multiplier:1,
 		default:true,
 		values:["", "tbc", "TBC"],
-		decimalPlaces:8
+		decimalPlaces:6
 	},
 	{
 		name:"GBC",
